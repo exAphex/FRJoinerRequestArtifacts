@@ -1,6 +1,7 @@
 let loggedInUser =
   context.parent.parent.parent.parent.parent.rawInfo["user_id"];
 
+// query all orgs the given user is owner of
 function queryOrgs(userId) {
   return openidm.query(
     "managed/alpha_organization",
@@ -9,6 +10,7 @@ function queryOrgs(userId) {
   ).result;
 }
 
+// query all users to wants to join a certain organisation
 function queryRequestors(orgName) {
   return openidm.query(
     "managed/alpha_user",
@@ -17,6 +19,7 @@ function queryRequestors(orgName) {
   ).result;
 }
 
+// return all open requests a user has to decide on
 function getRequestors(userId) {
   let orgs = queryOrgs(userId);
   let retRequestors = [];
@@ -31,13 +34,11 @@ function getRequestors(userId) {
 
 (function () {
   if (request.method === "create") {
-    // POST
     return {};
   } else if (request.method === "read") {
-    // GET
+    // return all open requests for myself
     return { userid: loggedInUser, results: getRequestors(loggedInUser) };
   } else if (request.method === "update") {
-    // PUT
     return {};
   } else if (request.method === "patch") {
     return {};
