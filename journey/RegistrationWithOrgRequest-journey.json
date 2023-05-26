@@ -1,0 +1,258 @@
+{
+  "meta": {
+    "origin": "https://openam-aydintest.forgeblocks.com/platform/?realm=alpha#/journeys",
+    "exportedBy": "aydin.tekin@forgerock.com",
+    "exportDate": "2023-05-26T09:49:45.200Z",
+    "exportTool": "platform-admin ui tree export",
+    "exportToolVersion": "1.0",
+    "treesSelectedForExport": [
+      "RegistrationWithOrgRequest"
+    ],
+    "innerTreesIncluded": []
+  },
+  "trees": {
+    "RegistrationWithOrgRequest": {
+      "tree": {
+        "_id": "RegistrationWithOrgRequest",
+        "_rev": "1459656366",
+        "identityResource": "managed/alpha_user",
+        "uiConfig": {
+          "categories": "[\"Registration\"]"
+        },
+        "entryNodeId": "5ceeb731-e6ad-488c-9e95-e18e0f91eca1",
+        "nodes": {
+          "5ceeb731-e6ad-488c-9e95-e18e0f91eca1": {
+            "connections": {
+              "outcome": "fab76944-4ac2-4a2a-8f16-d92929463949"
+            },
+            "displayName": "Page Node",
+            "nodeType": "PageNode",
+            "x": 261,
+            "y": 168
+          },
+          "a07509f8-f58f-45dd-a596-ab927d23b6c7": {
+            "connections": {
+              "CREATED": "70e691a5-1e33-4ac3-a356-e7b6d60d92e0",
+              "FAILURE": "e301438c-0bd0-429c-ab0c-66126501069a"
+            },
+            "displayName": "Create Object",
+            "nodeType": "CreateObjectNode",
+            "x": 1426,
+            "y": 262
+          },
+          "fab76944-4ac2-4a2a-8f16-d92929463949": {
+            "connections": {
+              "true": "a07509f8-f58f-45dd-a596-ab927d23b6c7"
+            },
+            "displayName": "Scripted Decision",
+            "nodeType": "ScriptedDecisionNode",
+            "x": 673.00390625,
+            "y": 219.01953125
+          }
+        },
+        "description": "Platform Registration Tree",
+        "staticNodes": {
+          "70e691a5-1e33-4ac3-a356-e7b6d60d92e0": {
+            "x": 1355,
+            "y": 154
+          },
+          "e301438c-0bd0-429c-ab0c-66126501069a": {
+            "x": 1281,
+            "y": 484
+          },
+          "startNode": {
+            "x": 50,
+            "y": 25
+          }
+        },
+        "enabled": true
+      },
+      "nodes": {
+        "5ceeb731-e6ad-488c-9e95-e18e0f91eca1": {
+          "_id": "5ceeb731-e6ad-488c-9e95-e18e0f91eca1",
+          "_rev": "440620558",
+          "nodes": [
+            {
+              "_id": "0468a1e4-55ad-4b50-b7ab-5d04f4b01016",
+              "nodeType": "ValidatedUsernameNode",
+              "displayName": "Platform Username"
+            },
+            {
+              "_id": "2b4dd36b-37ef-435b-bc6a-ac48a432d8e0",
+              "nodeType": "AttributeCollectorNode",
+              "displayName": "Attribute Collector"
+            },
+            {
+              "_id": "fac40951-12a2-4881-ac8c-4e9939e032c5",
+              "nodeType": "ValidatedPasswordNode",
+              "displayName": "Platform Password"
+            },
+            {
+              "_id": "4fa01dc5-11da-4520-96bf-36a38db10ad0",
+              "nodeType": "AcceptTermsAndConditionsNode",
+              "displayName": "Accept Terms and Conditions"
+            }
+          ],
+          "pageDescription": {
+            "en": "Signing up is fast and easy.<br>Already have an account? <a href='#/service/Login'>Sign In</a>"
+          },
+          "pageHeader": {
+            "en": "Sign Up"
+          },
+          "_type": {
+            "_id": "PageNode",
+            "name": "Page Node",
+            "collection": true
+          },
+          "_outcomes": [
+            {
+              "id": "outcome",
+              "displayName": "Outcome"
+            }
+          ]
+        },
+        "a07509f8-f58f-45dd-a596-ab927d23b6c7": {
+          "_id": "a07509f8-f58f-45dd-a596-ab927d23b6c7",
+          "_rev": "716879527",
+          "identityResource": "managed/alpha_user",
+          "_type": {
+            "_id": "CreateObjectNode",
+            "name": "Create Object",
+            "collection": true
+          },
+          "_outcomes": [
+            {
+              "id": "CREATED",
+              "displayName": "Created"
+            },
+            {
+              "id": "FAILURE",
+              "displayName": "Failed"
+            }
+          ]
+        },
+        "fab76944-4ac2-4a2a-8f16-d92929463949": {
+          "_id": "fab76944-4ac2-4a2a-8f16-d92929463949",
+          "_rev": "-1780826324",
+          "script": "cee14115-c53b-4071-80d1-fa7564324be3",
+          "outcomes": [
+            "true"
+          ],
+          "outputs": [
+            "*"
+          ],
+          "inputs": [
+            "*"
+          ],
+          "_type": {
+            "_id": "ScriptedDecisionNode",
+            "name": "Scripted Decision",
+            "collection": true
+          },
+          "_outcomes": [
+            {
+              "id": "true",
+              "displayName": "true"
+            }
+          ]
+        }
+      },
+      "innerNodes": {
+        "0468a1e4-55ad-4b50-b7ab-5d04f4b01016": {
+          "_id": "0468a1e4-55ad-4b50-b7ab-5d04f4b01016",
+          "_rev": "-1801773264",
+          "usernameAttribute": "userName",
+          "validateInput": true,
+          "_type": {
+            "_id": "ValidatedUsernameNode",
+            "name": "Platform Username",
+            "collection": true
+          },
+          "_outcomes": [
+            {
+              "id": "outcome",
+              "displayName": "Outcome"
+            }
+          ]
+        },
+        "2b4dd36b-37ef-435b-bc6a-ac48a432d8e0": {
+          "_id": "2b4dd36b-37ef-435b-bc6a-ac48a432d8e0",
+          "_rev": "1206238481",
+          "attributesToCollect": [
+            "givenName",
+            "sn",
+            "mail",
+            "preferences/marketing",
+            "preferences/updates"
+          ],
+          "identityAttribute": "userName",
+          "validateInputs": true,
+          "required": true,
+          "_type": {
+            "_id": "AttributeCollectorNode",
+            "name": "Attribute Collector",
+            "collection": true
+          },
+          "_outcomes": [
+            {
+              "id": "outcome",
+              "displayName": "Outcome"
+            }
+          ]
+        },
+        "fac40951-12a2-4881-ac8c-4e9939e032c5": {
+          "_id": "fac40951-12a2-4881-ac8c-4e9939e032c5",
+          "_rev": "-962152382",
+          "passwordAttribute": "password",
+          "validateInput": true,
+          "_type": {
+            "_id": "ValidatedPasswordNode",
+            "name": "Platform Password",
+            "collection": true
+          },
+          "_outcomes": [
+            {
+              "id": "outcome",
+              "displayName": "Outcome"
+            }
+          ]
+        },
+        "4fa01dc5-11da-4520-96bf-36a38db10ad0": {
+          "_id": "4fa01dc5-11da-4520-96bf-36a38db10ad0",
+          "_rev": "64175167",
+          "_type": {
+            "_id": "AcceptTermsAndConditionsNode",
+            "name": "Accept Terms and Conditions",
+            "collection": true
+          },
+          "_outcomes": [
+            {
+              "id": "outcome",
+              "displayName": "Outcome"
+            }
+          ]
+        }
+      },
+      "scripts": {
+        "cee14115-c53b-4071-80d1-fa7564324be3": {
+          "_id": "cee14115-c53b-4071-80d1-fa7564324be3",
+          "name": "getOrganisationChoice",
+          "description": null,
+          "script": "\"var outcome = \\\"true\\\";\\nvar choices = [\\\"Sales\\\", \\\"IT\\\"];\\nvar fr = JavaImporter(\\n    org.forgerock.openam.auth.node.api.Action,\\n    javax.security.auth.callback.ChoiceCallback\\n);\\nif (callbacks.isEmpty()) {\\n    action = fr.Action.send(new fr.ChoiceCallback(\\\"Choose your organization\\\", choices, 0, false)).build();\\n}\\nelse {\\n    var selectedMode = callbacks.get(0).getSelectedIndexes()[0];\\n    var selectedChoice = choices[selectedMode];\\n    if (selectedChoice) {\\n        var objAttributes = sharedState.get(\\\"objectAttributes\\\");\\n        objAttributes.put(\\\"frIndexedString2\\\", selectedChoice);\\n        objAttributes.put(\\\"frIndexedString3\\\", new Date().toString());\\n        sharedState.put(\\\"objAttributes\\\", objAttributes);\\n    }\\n}\"",
+          "default": false,
+          "language": "JAVASCRIPT",
+          "context": "AUTHENTICATION_TREE_DECISION_NODE",
+          "createdBy": "null",
+          "creationDate": 0,
+          "lastModifiedBy": "null",
+          "lastModifiedDate": 0
+        }
+      },
+      "emailTemplates": {},
+      "socialIdentityProviders": {},
+      "themes": [],
+      "saml2Entities": {},
+      "circlesOfTrust": {}
+    }
+  }
+}
